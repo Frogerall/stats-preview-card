@@ -9,27 +9,37 @@ body {
   background-color: hsl(233, 47%, 7%);
 }
 
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 600px) {
+  img {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+
 .container {
+  background-color: hsl(244, 38%, 16%);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin: 1rem auto;
-  background-color: hsl(244, 38%, 16%);
-  text-align: center;
-  width: 25rem;
+  margin: 1.5rem;
   border-radius: 0.5rem;
 }
-.container p {
-  color: hsla(0, 0%, 100%, 0.75);
-  font-size: 15px;
-  max-width: 30ch;
-  margin: 0 auto;
-  line-height: 1.7;
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row-reverse;
+    margin: 5rem auto;
+    width: 70%;
+  }
 }
 
 .img-wrap {
+  flex: 1 1 50%;
   position: relative;
-  display: block;
 }
 
 .img-wrap::after {
@@ -39,34 +49,80 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: hsla(277, 71%, 26%, 0.63);
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  background-color: hsla(278, 78%, 31%, 0.527);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 600px) {
+  .img-wrap::after {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
+.main {
+  flex: 1 1 50%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media (min-width: 600px) {
+  .main {
+    padding: 5%;
+  }
 }
 
 h1 {
   color: hsl(0, 0%, 100%);
-  padding: 0.5rem;
-  max-width: 15ch;
-  margin: 0 auto;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  h1 {
+    text-align: left;
+  }
 }
 h1 span {
   color: hsl(277, 64%, 61%);
-  font-family: "Lexend Deca", sans-serif;
+  display: inline;
 }
 
-h2 {
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  text-align: center;
+  line-height: 1.7;
+  font-size: 15px;
+}
+@media (min-width: 600px) {
+  p {
+    text-align: left;
+    margin-bottom: 2.3rem;
+  }
+}
+
+.stat h2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: hsl(0, 0%, 100%);
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
-h2 span {
-  font-size: 15px;
-  color: hsla(0, 0%, 100%, 0.438);
+.stat h2 span {
+  color: hsla(0, 0%, 100%, 0.336);
+  font-size: 14px;
+}
+@media (min-width: 600px) {
+  .stat {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .stat h2 {
+    display: inline;
+    line-height: 1;
+  }
 }
